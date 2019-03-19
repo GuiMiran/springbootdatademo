@@ -1,18 +1,11 @@
 /*
- * Para acceder a la consola: 
+ * Para acceder a la consola:  	http://localhost:8080/h2-console
  * 
- * http://localhost:8080/h2-console
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ * Parámetros de conexión:     	JDBC URL: jdbc:h2:mem:testdb
+ * 								username: sa
+ * 								password: 
  * 
  */
-
 
 INSERT INTO ALUMNOS VALUES 
 (10,'Pepín','Gálvez'),
