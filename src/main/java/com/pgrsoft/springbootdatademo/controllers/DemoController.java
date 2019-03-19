@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pgrsoft.springbootdatademo.model.Alumno;
 import com.pgrsoft.springbootdatademo.model.Cliente;
+import com.pgrsoft.springbootdatademo.model.onetomany.Empleado;
 import com.pgrsoft.springbootdatademo.repositories.AlumnoRepository;
 import com.pgrsoft.springbootdatademo.repositories.ClienteRepository;
+import com.pgrsoft.springbootdatademo.repositories.EmpleadoRepository;
 
 @RestController
 public class DemoController {
@@ -23,6 +25,13 @@ public class DemoController {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
+	@Autowired
+	private EmpleadoRepository empleadoRepository;
+	
+	@GetMapping("/empleados")
+	public List<Empleado> empleados(){
+		return empleadoRepository.findAll();
+	}
 	
 	@GetMapping("/alumnos")
 	public List<Alumno> prueba() {

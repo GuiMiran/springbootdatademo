@@ -7,6 +7,18 @@
  * 
  */
 
+INSERT INTO DEPARTAMENTOS VALUES
+(100,'Comercial'),
+(101,'Facturación'),
+(110,'I+D'),
+(120,'Recursos Humanos');
+
+INSERT INTO EMPLEADOS VALUES
+('F4655','Pepín','Gálvez','Ridruejo','2017-10-24',14500,110),
+('F4634','Honorio','Martín','Salvador','2016-10-10',2100,101),
+('F4666','Carlota','Sánchez','Cifuentes','2012-11-10',22100,101);
+
+
 INSERT INTO ALUMNOS VALUES 
 (10,'Pepín','Gálvez'),
 (12,'Honorio','Martín'),
