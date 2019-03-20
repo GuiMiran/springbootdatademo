@@ -2,9 +2,17 @@ package com.pgrsoft.springbootdatademo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Embeddable
 public class LineaFactura implements Serializable {
 	private static final long serialVersionUID = 49098325L;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="ID_PRODUCTO")
 	private Producto producto;
 	private int cantidad;
 	private double precio;

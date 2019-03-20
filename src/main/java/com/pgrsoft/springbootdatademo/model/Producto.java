@@ -2,10 +2,17 @@ package com.pgrsoft.springbootdatademo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="PRODUCTOS")
 public class Producto implements Serializable {
 	private static final long serialVersionUID = -36441L;
 	
+	@Id
 	private Integer codigo;
+	
 	private String nombre;
 	private double precio;
 	

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pgrsoft.springbootdatademo.model.Alumno;
 import com.pgrsoft.springbootdatademo.model.Cliente;
+import com.pgrsoft.springbootdatademo.model.Factura;
+import com.pgrsoft.springbootdatademo.model.Producto;
 import com.pgrsoft.springbootdatademo.model.manytomany.Asignatura;
 import com.pgrsoft.springbootdatademo.model.musica.Artista;
 import com.pgrsoft.springbootdatademo.model.musica.Disco;
@@ -21,6 +23,8 @@ import com.pgrsoft.springbootdatademo.repositories.AsignaturaRepository;
 import com.pgrsoft.springbootdatademo.repositories.ClienteRepository;
 import com.pgrsoft.springbootdatademo.repositories.DiscoRepository;
 import com.pgrsoft.springbootdatademo.repositories.EmpleadoRepository;
+import com.pgrsoft.springbootdatademo.repositories.FacturaRepository;
+import com.pgrsoft.springbootdatademo.repositories.ProductoRepository;
 
 @RestController
 public class DemoController {
@@ -42,6 +46,29 @@ public class DemoController {
 
 	@Autowired
 	private AsignaturaRepository asignaturaRepository;
+	
+	@Autowired
+	private ProductoRepository productoRepository;
+	
+	@Autowired
+	private FacturaRepository facturaRepository;
+	
+	@GetMapping("/facturas")
+	public List<Factura> facturas (){
+		List<Factura> facturas = facturaRepository.findAll();
+		System.out.println(facturas);
+		
+		// por qué no devuelve las lineas de factura?
+		// el syso las muestra ?)=?·ÑT$%???
+		// regalo 200€ a quien lo encuentre...
+		
+		return facturas;
+	}
+	
+	@GetMapping("/productos")
+	public List<Producto> getProductos() {
+		return productoRepository.findAll();
+	}
 	
 	@GetMapping("/asignaturas")
 	public List<Asignatura> getAsignatura() {
